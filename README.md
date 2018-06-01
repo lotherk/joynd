@@ -4,6 +4,35 @@
 
 ## Help
 ```
+joynd 0.1 Copyright (C) 2018 Konrad Lother <k@hiddenbox.org>
+
+This software is supplied WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. This is free
+software, and you are welcome to redistribute it under certain conditions; see
+the template COPYING for details.
+
+Translates joystick input to key presses
+
+Usage: joynd [-h|--help] [-V|--version] [-l|--list] [-iINT|--input=INT]
+         [-D|--debug] [-bN=KEY[+KEY1[+KEY2]]|--map-button=N=KEY[+KEY1[+KEY2]]]
+         [-aN=KEY[+KEY1[KEY2]]|--map-axis=N=KEY[+KEY1[KEY2]]] [-d|--daemon]
+
+  -h, --help                    Print help and exit
+  -V, --version                 Print version and exit
+
+
+  -l, --list                    List all available joysticks and exit
+                                  (default=off)
+  -i, --input=INT               Define joystick input number (0 is first, 1 is
+                                  second, ...)
+  -D, --debug                   Show debug informations  (default=off)
+  -b, --map-button=N=KEY[+KEY1[+KEY2]]
+                                Map button number N to key KEY
+  -a, --map-axis=N=KEY[+KEY1[KEY2]]
+                                Map axis N to KEY
+  -d, --daemon                  Fork into background  (default=off)
+
+See joynd(1) for more informations and examples.
 
 ```
 
