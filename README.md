@@ -15,7 +15,8 @@ Translates joystick input to key presses
 
 Usage: joynd [-h|--help] [-V|--version] [-l|--list] [-iINT|--input=INT]
          [-D|--debug] [-bN=KEY[+KEY1[+KEY2]]|--map-button=N=KEY[+KEY1[+KEY2]]]
-         [-aN=KEY[+KEY1[KEY2]]|--map-axis=N=KEY[+KEY1[KEY2]]] [-d|--daemon]
+         [-aN[:MIN:MAX]=KEY[+KEY1[+KEY2]]|--map-axis=N[:MIN:MAX]=KEY[+KEY1[+KEY2]]]
+         [-d|--daemon]
 
   -h, --help                    Print help and exit
   -V, --version                 Print version and exit
@@ -28,7 +29,7 @@ Usage: joynd [-h|--help] [-V|--version] [-l|--list] [-iINT|--input=INT]
   -D, --debug                   Show debug informations  (default=off)
   -b, --map-button=N=KEY[+KEY1[+KEY2]]
                                 Map button number N to key KEY
-  -a, --map-axis=N=KEY[+KEY1[KEY2]]
+  -a, --map-axis=N[:MIN:MAX]=KEY[+KEY1[+KEY2]]
                                 Map axis N to KEY
   -d, --daemon                  Fork into background  (default=off)
 

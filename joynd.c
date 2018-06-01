@@ -97,9 +97,6 @@ int main(int argc, char **argv)
         if (cmdline_parser(argc, argv, &args) != 0)
                 exit(EXIT_FAILURE);
 
-        if (args.daemon_flag) {
-                daemon(0, 0);
-        }
 
 
         if (init_SDL() != 0) {
@@ -125,6 +122,10 @@ int main(int argc, char **argv)
         if (create_key_maps(button_map, args.map_button_arg, args.map_button_given) != 0) {
                 perror("create_key_maps");
                 exit(EXIT_FAILURE);
+        }
+
+        if (args.daemon_flag) {
+                daemon(0, 0);
         }
 
         if((r = poll_joystick()) == 0) {

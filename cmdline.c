@@ -27,7 +27,7 @@
 
 const char *gengetopt_args_info_purpose = "Translates joystick input to key presses";
 
-const char *gengetopt_args_info_usage = "Usage: joynd [-h|--help] [-V|--version] [-l|--list] [-iINT|--input=INT]\n         [-D|--debug] [-bN=KEY[+KEY1[+KEY2]]|--map-button=N=KEY[+KEY1[+KEY2]]]\n         [-aN=KEY[+KEY1[KEY2]]|--map-axis=N=KEY[+KEY1[KEY2]]] [-d|--daemon]";
+const char *gengetopt_args_info_usage = "Usage: joynd [-h|--help] [-V|--version] [-l|--list] [-iINT|--input=INT]\n         [-D|--debug] [-bN=KEY[+KEY1[+KEY2]]|--map-button=N=KEY[+KEY1[+KEY2]]]\n         [-aN[:MIN:MAX]=KEY[+KEY1[+KEY2]]|--map-axis=N[:MIN:MAX]=KEY[+KEY1[+KEY2]]]\n         [-d|--daemon]";
 
 const char *gengetopt_args_info_versiontext = "This software is supplied WITHOUT ANY WARRANTY; without even the implied\nwarranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. This is free\nsoftware, and you are welcome to redistribute it under certain conditions; see\nthe template COPYING for details.";
 
@@ -41,7 +41,7 @@ const char *gengetopt_args_info_help[] = {
   "  -i, --input=INT               Define joystick input number (0 is first, 1 is\n                                  second, ...)",
   "  -D, --debug                   Show debug informations  (default=off)",
   "  -b, --map-button=N=KEY[+KEY1[+KEY2]]\n                                Map button number N to key KEY",
-  "  -a, --map-axis=N=KEY[+KEY1[KEY2]]\n                                Map axis N to KEY",
+  "  -a, --map-axis=N[:MIN:MAX]=KEY[+KEY1[+KEY2]]\n                                Map axis N to KEY",
   "  -d, --daemon                  Fork into background  (default=off)",
   "\nSee joynd(1) for more informations and examples.",
     0

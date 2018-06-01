@@ -21,7 +21,7 @@ option "map-button" b "Map button number N to key KEY"
         string typestr="N=KEY[+KEY1[+KEY2]]" multiple optional dependon="input"
 
 option "map-axis" a "Map axis N to KEY"
-        string typestr="N=KEY[+KEY1[KEY2]]" multiple optional dependon="input"
+        string typestr="N[:MIN:MAX]=KEY[+KEY1[+KEY2]]" multiple optional dependon="input"
 
 option "daemon" d "Fork into background" flag off
 text "
