@@ -8,7 +8,7 @@ all: program
 
 opts: cmdline
 cmdline:
-	gengetopt -i joynd.ggo
+	gengetopt -l -i joynd.ggo
 
 program:
 	cc ${CFLAGS} -o joynd joynd.c cmdline.c
