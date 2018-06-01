@@ -100,7 +100,8 @@ int main(int argc, char **argv)
 
 
         if (init_SDL() != 0) {
-                perror("init_SDL");
+                fprintf(stderr, "init_SDL: %s\n", SDL_GetError());
+                fflush(stderr);
                 exit(EXIT_FAILURE);
         }
 
@@ -139,22 +140,16 @@ int main(int argc, char **argv)
 static int init_x11()
 {
         display = XOpenDisplay(NULL);
-        if (display == NULL) {
-                perror("XOpenDisplay");
+        if (display == NULL)
                 return 1;
-        }
 
         return 0;
 }
 
 static int init_SDL()
 {
-        if (SDL_Init(SDL_INIT_JOYSTICK) < 0) {
-                fprintf(stderr, "SDL_Init: %s\n", SDL_GetError());
-                fflush(stderr);
-                errno = -1;
+        if (SDL_Init(SDL_INIT_JOYSTICK) < 0)
                 return 1;
-        }
 
         SDL_JoystickEventState(SDL_ENABLE);
 
@@ -168,7 +163,6 @@ static int open_joystick(unsigned int num)
         if (joystick == NULL) {
                 fprintf(stderr, "SDL_JoystickOpen: %s\n", SDL_GetError());
                 fflush(stderr);
-                errno = -1;
                 return 1;
         }
 
@@ -366,7 +360,7 @@ static int poll_joystick()
 
         run = 1;
         tim.tv_sec = 0;
-        tim.tv_nsec = 5000000L;
+        tim.tv_nsec = 50000000L;
 
         while (run) {
                 while (SDL_PollEvent(&event)) {
