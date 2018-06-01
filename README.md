@@ -47,10 +47,10 @@ See joynd(1) for more informations and examples.
 ```
 
 ## Examples
-Prior to sens9x-gtk I run the following scripts:
+Prior to sens9x-gtk I run the following script:
 ```
 #!/bin/sh
-joynd -i 0 \
+joynd -d -i 0 \
         -b 7=q \
         -b 4=w \
         -b 5=e \
