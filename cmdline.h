@@ -38,14 +38,7 @@ extern "C" {
 struct gengetopt_args_info
 {
   const char *help_help; /**< @brief Print help and exit help description.  */
-  const char *detailed_help_help; /**< @brief Print help, including all details and hidden options, and exit help description.  */
   const char *version_help; /**< @brief Print version and exit help description.  */
-  char * log_file_arg;	/**< @brief Write logs to FILE (default='/dev/stderr').  */
-  char * log_file_orig;	/**< @brief Write logs to FILE original value given at command line.  */
-  const char *log_file_help; /**< @brief Write logs to FILE help description.  */
-  int verbose_arg;	/**< @brief Be more verbose. Can be specified multiple times to a maximum of 7.  */
-  char * verbose_orig;	/**< @brief Be more verbose. Can be specified multiple times to a maximum of 7 original value given at command line.  */
-  const char *verbose_help; /**< @brief Be more verbose. Can be specified multiple times to a maximum of 7 help description.  */
   int list_flag;	/**< @brief List all available joysticks and exit (default=off).  */
   const char *list_help; /**< @brief List all available joysticks and exit help description.  */
   int input_arg;	/**< @brief Define joystick input number (0 is first, 1 is second, ...).  */
@@ -67,10 +60,7 @@ struct gengetopt_args_info
   const char *daemon_help; /**< @brief Fork into background help description.  */
   
   unsigned int help_given ;	/**< @brief Whether help was given.  */
-  unsigned int detailed_help_given ;	/**< @brief Whether detailed-help was given.  */
   unsigned int version_given ;	/**< @brief Whether version was given.  */
-  unsigned int log_file_given ;	/**< @brief Whether log-file was given.  */
-  unsigned int verbose_given ;	/**< @brief Whether verbose was given.  */
   unsigned int list_given ;	/**< @brief Whether list was given.  */
   unsigned int input_given ;	/**< @brief Whether input was given.  */
   unsigned int debug_given ;	/**< @brief Whether debug was given.  */
@@ -78,8 +68,6 @@ struct gengetopt_args_info
   unsigned int map_axis_given ;	/**< @brief Whether map-axis was given.  */
   unsigned int daemon_given ;	/**< @brief Whether daemon was given.  */
 
-  char **inputs ; /**< @brief unamed options (options without names) */
-  unsigned inputs_num ; /**< @brief unamed options number */
 } ;
 
 /** @brief The additional parameters to pass to parser functions */
@@ -100,8 +88,6 @@ extern const char *gengetopt_args_info_usage;
 extern const char *gengetopt_args_info_description;
 /** @brief all the lines making the help output */
 extern const char *gengetopt_args_info_help[];
-/** @brief all the lines making the detailed help output (including hidden options and details) */
-extern const char *gengetopt_args_info_detailed_help[];
 
 /**
  * The command line parser
@@ -163,10 +149,6 @@ int cmdline_parser_file_save(const char *filename,
  * Print the help
  */
 void cmdline_parser_print_help(void);
-/**
- * Print the detailed help (including hidden options and details)
- */
-void cmdline_parser_print_detailed_help(void);
 /**
  * Print the version
  */

@@ -1,4 +1,4 @@
-package "joy2key"
+package "joynd"
 version "0.1 Copyright (C) 2018 Konrad Lother <k@hiddenbox.org>"
 
 purpose "Translates joystick input to key presses"
@@ -7,31 +7,6 @@ versiontext "This software is supplied WITHOUT ANY WARRANTY; without even the im
 
 text "\n"
 
-
-option "log-file" L "Write logs to FILE"
-        string typestr="FILE"
-        optional default="/dev/stderr"
-
-option "verbose" v "Be more verbose. Can be specified multiple times to a maximum of 7"
-        int optional
-        details="
-Occurances    Level
-1             Fatal
-2             Critical
-3             Error
-4             Warning
-5             Info
-6             Debug
-7             All
-
-Examples:
-
-log all Critical and thus also Fatal messages
-# joy2key -v 2 ...
-
-log all messages
-# joy2key -v 7 ...
-"
 option "list" l "List all available joysticks and exit"
         flag off
 
@@ -50,4 +25,4 @@ option "map-axis" a "Map axis N to KEY"
 
 option "daemon" d "Fork into background" flag off
 text "
-See joy2key(1) for more informations and examples."
+See joynd(1) for more informations and examples."
