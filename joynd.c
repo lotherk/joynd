@@ -1,5 +1,5 @@
 
-/* joy2key.c
+/* joynd.c
  *
  * Copyright (C) 2018
  *	Konrad Lother <k@hiddenbox.org>

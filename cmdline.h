@@ -21,12 +21,12 @@ extern "C" {
 
 #ifndef CMDLINE_PARSER_PACKAGE
 /** @brief the program name (used for printing errors) */
-#define CMDLINE_PARSER_PACKAGE "joy2key"
+#define CMDLINE_PARSER_PACKAGE "joynd"
 #endif
 
 #ifndef CMDLINE_PARSER_PACKAGE_NAME
 /** @brief the complete program name (used for help and version) */
-#define CMDLINE_PARSER_PACKAGE_NAME "joy2key"
+#define CMDLINE_PARSER_PACKAGE_NAME "joynd"
 #endif
 
 #ifndef CMDLINE_PARSER_VERSION
